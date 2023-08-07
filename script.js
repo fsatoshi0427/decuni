@@ -1,5 +1,6 @@
 window.onload = document.write(decode());
-  
+
+/*
 function decode () {
   const hash = location.hash;
   let result;
@@ -10,3 +11,4 @@ function decode () {
   }
   return result;
 }
+*/
