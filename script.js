@@ -1,17 +1,10 @@
-/*
+/* 晩御飯おいしかった。ということで、コードがこちら。*/
 
-window.onload = document.write(decode());
+window.onload=function(){
+    document.write(decode());
+};
 
-function decode () {
-  const hash = location.hash;
-  let result;
-  strs = hash.match(/\\u.{4}/ig);
-  if (!strs) return 'error';
-  for (let i = 0, len = strs.length; i < len; i++) {
-		result += String.fromCharCode(strs[i].replace('\\u', '0x'));
-  }
-  return result;
+function decode(){
+    const unicode=location.hash.replace(/^#/,"");
+    return unicode.replace(/\\u.{4}/ig,function(match){return String.fromCharCode(match.replace('\\u', '0x'))});
 }
-*/
-
-window.onload = document.write(location.hash);
